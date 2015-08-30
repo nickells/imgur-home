@@ -15,9 +15,9 @@ app.config(function ($stateProvider) {
 	});
 });
 
-app.controller('HomeCtrl', function ($scope, pics, $interval) {
-	console.log($scope.picOfTheHour)
+app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 
+	$scope.categories = ImgurFactory.categories;
 	//initial set retrieval
 	$scope.pics = pics.data;
 
@@ -30,19 +30,17 @@ app.controller('HomeCtrl', function ($scope, pics, $interval) {
 		return _.random(0, $scope.landscapesOnly.length)
 	}
 
-	//set initial pic for interval
-	if (!$scope.picOfTheHour) {
-		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
-	}
+	//set initial pic for interval. typecheck in case it breaks.
+	$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
 
 
-	//change every so often
+	//change every so often. this doesn't persist yet. future plans to stick it in the session
 	$interval(function () {
 		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
 	}, 3600000)
 
 	$scope.newImage = function () {
-		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
+		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()] || $scope.landscapesOnly[1]
 		console.log($scope.picOfTheHour)
 	}
 })

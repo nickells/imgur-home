@@ -1,9 +1,14 @@
 <!-- <pre>{{randPic | json}}</pre> -->
 <div id="img-background" style="background-image: url('{{picOfTheHour.link}}')">
-	<div id="new" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
+	<div id="new" class="text" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
+	<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
+		<div id="listHolder">
+			<a ng-repeat="category in categories" class="listItem" href="{{category.name}}">{{category.name}}</a>
+		</div>
+	</div>
 	<a href="http://www.reddit.com/{{picOfTheHour.reddit_comments}}">
-		<div id="link">
-		<span class="glyphicon glyphicon-link"></span> {{picOfTheHour.title.split("[")[0]}}
+		<div id="link" class="text">
+		 {{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
 		</div>
 	</a>
 	<div id="vignette"></div>
