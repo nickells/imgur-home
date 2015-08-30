@@ -37,7 +37,7 @@ app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 		return _.random(0, $scope.landscapesOnly.length)
 	}
 
-	//set initial pic for interval. typecheck in case it breaks.
+	//set initial pic for interval
 	$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
 
 

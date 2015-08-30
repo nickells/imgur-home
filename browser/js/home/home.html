@@ -3,7 +3,7 @@
 	<div id="new" class="text" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
 	<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
 		<div id="listHolder">
-			<a ng-repeat="category in categories" class="listItem" href="{{category.name}}" target="_self">{{category.name}}</a>
+			<a ng-repeat="category in categories" class="listItem" ui-sref='home({category: category.name})'>{{category.name}}</a>
 		</div>
 	</div>
 	<a href="http://www.reddit.com/{{picOfTheHour.reddit_comments}}">
