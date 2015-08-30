@@ -83,10 +83,10 @@
 	bottom: 15px;
 	left: 15px;
 	cursor: pointer;
-	span{
+	.glyphicon{
 		opacity: 0;
 	}
-	&:hover span{
+	&:hover .glyphicon{
 		color: white;
 		transition: .2s;
 		opacity: 1;

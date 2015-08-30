@@ -21,6 +21,13 @@ app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 	//initial set retrieval
 	$scope.pics = pics.data;
 
+
+
+	if ($scope.pics.length == 0) {
+		console.log('oops')
+		$scope.showError = true;
+	}
+
 	//limits to images that fit well on the screen
 	$scope.landscapesOnly = $scope.pics.filter(function (elem) {
 		return (elem.width > elem.height) && (elem.animated == false);
