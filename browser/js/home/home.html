@@ -7,11 +7,12 @@
 
 	<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
 		<div id="listHolder">
-			<a ng-repeat="category in categories" class="listItem" href="{{category.name}}">{{category.name}}</a>
+			<a ng-repeat="category in categories" class="listItem" ui-sref='home({category: category.name})'>{{category.name}}</a>
 		</div>
 	</div>
 	<a href="http://www.reddit.com/{{picOfTheHour.reddit_comments}}">
 		<div id="link" class="text">
+		<span ng-show="showError">There appears to be nothing here. (blame Imgur)</span>
 		 {{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
 		</div>
 	</a>
