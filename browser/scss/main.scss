@@ -4,7 +4,6 @@
 
 body {
   background: #333;
-  overflow: hidden;
 }
 
 @mixin clearfix {
@@ -16,7 +15,7 @@ body {
 }
 
 #main {
-
+  position: fixed;
 }
 
 @import 'directives/main';
