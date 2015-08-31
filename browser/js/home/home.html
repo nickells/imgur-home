@@ -1,6 +1,10 @@
 <!-- <pre>{{randPic | json}}</pre> -->
 <div id="img-background" style="background-image: url('{{picOfTheHour.link}}')">
 	<div id="new" class="text" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
+
+	<div id="time"><span class="big">{{date | date:"h:mm a"}}</span>
+		<span class="small">{{date | date:'fullDate'}}</div>
+
 	<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
 		<div id="listHolder">
 			<a ng-repeat="category in categories" class="listItem" href="{{category.name}}">{{category.name}}</a>

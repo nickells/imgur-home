@@ -33,11 +33,17 @@ app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 	//set initial pic for interval. typecheck in case it breaks.
 	$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
 
+	$scope.date = new Date
 
 	//change every so often. this doesn't persist yet. future plans to stick it in the session
 	$interval(function () {
 		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()]
 	}, 3600000)
+
+	$interval(function () {
+		$scope.date = new Date
+		console.log($scope.date)
+	}, 60000)
 
 	$scope.newImage = function () {
 		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()] || $scope.landscapesOnly[1]

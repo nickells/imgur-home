@@ -16,6 +16,28 @@
   	background-position: center bottom;
   }
 
+
+#time{
+	position: absolute;
+	font-size: 80pt;
+	top: 35%;
+	left: 15px;
+	color: white;
+	z-index: 1;
+	text-align: left;
+	span{
+		display: block;
+		font-weight: bold;
+		text-shadow: 0px 0px 20px rgba(0,0,0,1);
+		margin-top: -20px;
+
+	}
+	.small{
+		font-size:18pt;
+		font-weight: normal;
+	}
+}
+
 #selector{
  	color: rgba(255,255,255,.8);
  	z-index: 1;
