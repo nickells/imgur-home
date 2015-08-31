@@ -13,8 +13,11 @@
 	</div>
 	<a href="http://www.reddit.com{{picOfTheHour.reddit_comments}}">
 		<div id="link" class="text">
-		<span ng-show="showError">There appears to be nothing here. (blame Imgur)</span>
-		 {{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
+		<span ng-show="showError && !loading">There appears to be nothing here. (blame Imgur)</span>
+		<span ng-show="loading">Waiting for Imgur, just a second...</span>
+
+		 <span ng-hide="loading">{{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
+		</span>
 		</div>
 	</a>
 	<div id="vignette"></div>

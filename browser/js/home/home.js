@@ -56,4 +56,29 @@ app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()] || $scope.landscapesOnly[1]
 			// console.log($scope.picOfTheHour)
 	}
+
+
+	//loading screen, thanks Stefan Henze
+	$scope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+		if (toState.resolve) {
+			$scope.showSpinner();
+		}
+	});
+	$scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+		if (toState.resolve) {
+			$scope.hideSpinner();
+		}
+	});
+
+	$scope.loading = false;
+
+	$scope.showSpinner = function () {
+		console.log("hey!!")
+		$scope.loading = true;
+	}
+
+	$scope.hideSpinner = function () {
+		$scope.loading = false;
+	}
+
 })
