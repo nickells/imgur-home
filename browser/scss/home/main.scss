@@ -40,22 +40,23 @@
 	text-align: left;
 	span{
 		display: block;
-		font-weight: bold;
+		font-weight: 600;
 		text-shadow: 0px 0px 20px rgba(0,0,0,1);
 		margin-top: -20px;
 
 	}
 	.small{
-		font-size:18pt;
-		font-weight: normal;
+		font-size:20pt;
+		padding-left: 10pt;
+		font-weight: 500;
 	}
 }
 
 #selector{
  	color: rgba(255,255,255,.8);
  	z-index: 1;
-	font-family: Helvetica;
-	font-size: 14pt;
+	font-size: 13pt;
+	font-weight: 200;
 	position: absolute;
 	top: 14px;
 	right: -6em;
@@ -78,6 +79,7 @@
 			text-decoration: none;
 			&:hover{
 				color: white;
+				padding-right: 5px;
 			}
 		}
 	}	
@@ -95,7 +97,6 @@
 #new{
 	z-index: 1;
 	color: rgba(255,255,255,.8);
-	font-family: Helvetica;
 	font-size: 14pt;
 	position: absolute;
 	top: 14px;
@@ -112,8 +113,8 @@
 	z-index: 1;
 	color: rgba(255,255,255,.8);
 	text-shadow: 0px 0px 20px rgba(0,0,0,1);
-	font-family: Helvetica;
 	font-size: 14pt;
+	font-weight: 200;
 	position: absolute;
 	bottom: 15px;
 	left: 15px;
