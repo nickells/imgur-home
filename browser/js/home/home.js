@@ -42,11 +42,11 @@ app.controller('HomeCtrl', function ($scope, pics, $interval, ImgurFactory) {
 
 	$interval(function () {
 		$scope.date = new Date
-		console.log($scope.date)
+			// console.log($scope.date)
 	}, 60000)
 
 	$scope.newImage = function () {
 		$scope.picOfTheHour = $scope.landscapesOnly[randIndex()] || $scope.landscapesOnly[1]
-		console.log($scope.picOfTheHour)
+			// console.log($scope.picOfTheHour)
 	}
 })
