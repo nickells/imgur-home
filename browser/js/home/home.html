@@ -1,25 +1,27 @@
 <!-- <pre>{{randPic | json}}</pre> -->
 <div id="wrapper">
-<div id="img-background" style="background-image: url('{{picOfTheHour.link}}')">
-	<div id="new" class="text" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
+<div id="img-background-preloaded" style="background-image: url('{{picOfTheHourPreload.link}}')">
+	<div id="img-background" style="background-image: url('{{picOfTheHour.link}}')">
+		<div id="new" class="text" ng-click="newImage()"><span class="glyphicon glyphicon-random"></span></div>
 
-	<div id="time"><span class="big">{{date | date:"h:mm a"}}</span>
-		<span class="small">{{date | date:'fullDate'}}</div>
+		<div id="time"><span class="big">{{date | date:"h:mm a"}}</span>
+			<span class="small">{{date | date:'fullDate'}}</div>
 
-	<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
-		<div id="listHolder">
-			<a ng-repeat="category in categories" class="listItem" ui-sref='home({category: category.name})'>{{category.name}}</a>
+		<div id="selector" class="text"><span class="glyphicon glyphicon-tag"></span>
+			<div id="listHolder">
+				<a ng-repeat="category in categories" class="listItem" ui-sref='home({category: category.name})'>{{category.name}}</a>
+			</div>
 		</div>
+		<a href="http://www.reddit.com{{picOfTheHour.reddit_comments}}">
+			<div id="link" class="text">
+			<span ng-show="showError && !loading">There appears to be nothing here. (blame Imgur)</span>
+			<span ng-show="loading">Waiting for Imgur, just a second...</span>
+
+			 <span ng-hide="loading">{{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
+			</span>
+			</div>
+		</a>
+		<div id="vignette"></div>
 	</div>
-	<a href="http://www.reddit.com{{picOfTheHour.reddit_comments}}">
-		<div id="link" class="text">
-		<span ng-show="showError && !loading">There appears to be nothing here. (blame Imgur)</span>
-		<span ng-show="loading">Waiting for Imgur, just a second...</span>
-
-		 <span ng-hide="loading">{{picOfTheHour.title.split("[")[0]}} <span class="glyphicon glyphicon-link"></span>
-		</span>
-		</div>
-	</a>
-	<div id="vignette"></div>
 </div>
 </div>

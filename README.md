@@ -11,4 +11,4 @@ it's at http://www.mementodash.space/
 
 ![](http://i.imgur.com/mbwYXpo.png "a fractal of sorts")
 
-This app was built with [FSG](https://github.com/FullstackAcademy/fsg).
+This app was built using [FSG](https://github.com/FullstackAcademy/fsg).
